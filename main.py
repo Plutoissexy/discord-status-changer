@@ -10,7 +10,4 @@ url = 'https://discord.com/api/v9/users/@me/settings'
 
 res = requests.patch(url, data=json.dumps({"custom_status":{"text":f"{text}","emoji_name":f"{emoji}"}}), headers={"authorization": token, "content-type": "application/json"})
 
-if "401" in res.text:
-  print("Unauthorized")
-else:
-  print(f"Status Changed To: {emoji + text}")
+print(f"Status Changed To: {emoji + text}")
